@@ -1,0 +1,26 @@
+.cast {
+    display: block;
+    padding: 10px;
+}
+
+.castList {
+list-style: none;
+}
+
+.castItem {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 10vw;
+}
+
+.castImage {
+    width: 100%;
+    height: auto;
+    
+}
+
+.castCharacter,
+.castName {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+}

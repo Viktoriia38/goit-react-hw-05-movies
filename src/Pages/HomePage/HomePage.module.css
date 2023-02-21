@@ -1,0 +1,22 @@
+.homePage {
+    display: block;
+    padding: 10px 20px 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+}
+
+.homePageTitle {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+}
+
+.homePageList {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+}
+
+.homePageItem {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+    margin-bottom: 10px;
+}

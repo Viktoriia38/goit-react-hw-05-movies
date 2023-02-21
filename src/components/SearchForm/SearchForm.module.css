@@ -1,0 +1,27 @@
+.searchForm {
+    display: block;
+    padding: 20px;
+}
+
+.searchQuery {
+    padding: 5px 10px;
+    margin-right: 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    height: 40px;
+    width: 300px;
+}
+
+.searchButton {
+    border-radius: 10px;
+    background-color: rgb(14, 14, 113);
+    height: 40px;
+    width: 80px;
+}
+
+.buttonName {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(255, 255, 255);
+}

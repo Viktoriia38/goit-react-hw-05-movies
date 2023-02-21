@@ -1,0 +1,21 @@
+.review {
+    display: block;
+    padding: 10px;
+}
+
+.reviewList {
+    list-style: none;
+}
+
+.reviewItem {
+    border: solid 1px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.reviewAuthor,
+.reviewContent {
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(14, 14, 113);
+}
