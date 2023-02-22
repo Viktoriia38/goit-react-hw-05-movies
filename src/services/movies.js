@@ -24,8 +24,6 @@ export const castMovieFetch = async id => {
   const { data } = await axios.get(
     `${BASE_URL}/movie/${id}/credits?${KEY_URL}&language=en-US`
   );
-  console.log(data);
-
   return data;
 };
 

@@ -4,7 +4,7 @@ import css from './Layout.module.css';
 function Layout() {
   return (
     <>
-      <header>
+      <header className={css.section}>
         <nav className={css.layout}>
           <NavLink className={css.layoutLink} to="/">
             Home
@@ -14,7 +14,7 @@ function Layout() {
           </NavLink>
         </nav>
       </header>
-      <main>
+      <main className={css.section}>
         <Outlet />
       </main>
     </>

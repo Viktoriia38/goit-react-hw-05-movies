@@ -11,7 +11,6 @@ function MovieDescription() {
   const [status, setStatus] = useState('idle');
   const { movieId } = useParams();
   const location = useLocation();
-  // console.log(movieId);
 
   useEffect(() => {
     async function takeFilms() {
@@ -19,7 +18,6 @@ function MovieDescription() {
       try {
         const response = await descriptionMovieFetch(movieId);
         setMovieById({ ...response });
-        console.log(response);
         setStatus('fulfilled');
       } catch (error) {
         setStatus('rejected');
@@ -38,11 +36,13 @@ function MovieDescription() {
         {status === 'loading' && <Loader />}
 
         <div className={css.descriptionPoster}>
-          <img
-            className={css.descriptionPosterImage}
-            src={'https://image.tmdb.org/t/p/w500/' + movieById.poster_path}
-            alt=""
-          />
+          {Boolean(movieById.poster_path) && (
+            <img
+              className={css.descriptionPosterImage}
+              src={'https://image.tmdb.org/t/p/w500/' + movieById.poster_path}
+              alt=""
+            />
+          )}
         </div>
         <div className={css.descriptionText}>
           <h1 className={css.descriptionTitle}>
@@ -55,7 +55,6 @@ function MovieDescription() {
           <h2>Overview</h2>
           <p>{movieById.overview}</p>
           <h2>Genres</h2>
-          {/* {console.log(typeof movieById.genres)} */}
           {movieById.genres && movieById.genres.map(genre => `${genre.name} `)}
         </div>
       </div>

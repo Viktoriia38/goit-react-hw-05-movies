@@ -8,7 +8,6 @@ function Cast() {
   const [movieById, setMovieById] = useState([]);
   const [status, setStatus] = useState('idle');
   const { movieId } = useParams();
-  console.log(movieId);
 
   useEffect(() => {
     async function takeFilms() {
@@ -17,7 +16,6 @@ function Cast() {
       try {
         const response = await castMovieFetch(movieId);
         setMovieById([...response.cast]);
-        console.log(response.cast);
         setStatus('fulfilled');
       } catch (error) {
         setStatus('rejected');
@@ -27,8 +25,6 @@ function Cast() {
     takeFilms();
   }, [movieId]);
 
-  console.log(movieById);
-
   return (
     <div>
       {status === 'loading' && <Loader />}
@@ -37,11 +33,13 @@ function Cast() {
           {movieById &&
             movieById.map(item => (
               <li className={css.castItem} key={item.id}>
-                <img
-                  className={css.castImage}
-                  src={'https://image.tmdb.org/t/p/w500/' + item.profile_path}
-                  alt=""
-                />
+                {Boolean(item.profile_path) && (
+                  <img
+                    className={css.castImage}
+                    src={'https://image.tmdb.org/t/p/w500/' + item.profile_path}
+                    alt=""
+                  />
+                )}
                 <h3 className={css.castName}>{item.name}</h3>
                 <p className={css.castCharacter}>
                   Character <span>{item.character} </span>

@@ -15,7 +15,6 @@ function HomePage() {
       try {
         const response = await trendingMovieFetch();
         setTrendingMovies([...response]);
-        console.log(response);
         setStatus('fulfilled');
       } catch (error) {
         setStatus('rejected');

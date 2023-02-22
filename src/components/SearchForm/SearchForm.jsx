@@ -8,20 +8,15 @@ function SearchForm({ handleSubmit }) {
   const searchName = searchParams.get('name');
 
   const [name, setName] = useState(searchName ?? '');
-  console.log(name);
-
-  //   // console.log(name);
 
   const handleInput = e => {
     setName(e.target.value);
-    // console.log(e.target.value);
   };
 
   const handleFormSubmit = e => {
     e.preventDefault();
     handleSubmit(name);
     reset();
-    // console.log('Hello');
   };
 
   const reset = () => {

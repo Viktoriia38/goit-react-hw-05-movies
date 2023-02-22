@@ -1,3 +1,9 @@
+.section {
+    display: block;
+    margin: auto;
+    width: 1200px;
+}
+
 .layout {
     display: block;
     padding: 20px 20px 0;
@@ -7,4 +13,5 @@
     padding-top: 20px;
     margin-right: 30px;
     font-size: 20px;
+    font-family: 'Times New Roman', Times, serif;
 }

@@ -8,7 +8,6 @@ function Review() {
   const [reviewsById, setReviewsById] = useState([]);
   const [status, setStatus] = useState('idle');
   const { movieId } = useParams();
-  console.log(movieId);
 
   useEffect(() => {
     async function takeFilms() {
@@ -17,9 +16,6 @@ function Review() {
       try {
         const response = await reviewMovieFetch(movieId);
         setReviewsById([...response]);
-        // console.log(response);
-        console.log(reviewsById);
-
         setStatus('fulfilled');
       } catch (error) {
         setStatus('rejected');
@@ -29,9 +25,7 @@ function Review() {
     takeFilms();
   }, [movieId]);
 
-  console.log(reviewsById);
-
-  return [...reviewsById] ? (
+  return [...reviewsById].length > 0 ? (
     <div className={css.review}>
       {status === 'loading' && <Loader />}
       <ul className={css.reviewList}>

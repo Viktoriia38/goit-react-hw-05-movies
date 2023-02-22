@@ -11,8 +11,6 @@ function SearchMoviesPage() {
   const searchQuery = searchParams.get('query');
   const [status, setStatus] = useState('idle');
 
-  console.log(searchQuery);
-
   const handleNameSubmit = query => {
     setSearchParams({ query: query });
   };
@@ -24,9 +22,7 @@ function SearchMoviesPage() {
 
       try {
         const response = await searchMovieFetch(searchQuery);
-        console.log(response);
         searchsearchMovies([...response]);
-        console.log(response);
         setStatus('fulfilled');
       } catch (error) {
         setStatus('rejected');
@@ -35,7 +31,6 @@ function SearchMoviesPage() {
     }
     takeFilms();
   }, [searchQuery]);
-  console.log(searchMovies);
 
   return (
     <>

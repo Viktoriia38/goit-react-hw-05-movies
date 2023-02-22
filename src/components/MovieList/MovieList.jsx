@@ -1,15 +1,20 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 import propTypes from 'prop-types';
 import css from './MovieList.module.css';
 
 export const MovieList = ({ movies }) => {
-  console.log(movies);
+  const location = useLocation();
+
   return (
     <ul className={css.homePageList}>
       {movies &&
         movies.map(item => (
           <li className={css.homePageItem} key={item.id}>
-            <NavLink to={`/movies/${item.id}`} id={item.id}>
+            <NavLink
+              state={{ from: location }}
+              to={`/movies/${item.id}`}
+              id={item.id}
+            >
               {item.name} {item.title}
             </NavLink>
           </li>
