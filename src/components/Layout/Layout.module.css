@@ -15,3 +15,13 @@
     font-size: 20px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+/* :global .active {
+
+} */
+
+
+.active {
+    composes: layoutLink;
+    border-bottom: solid 4px rgb(43, 5, 255);
+}

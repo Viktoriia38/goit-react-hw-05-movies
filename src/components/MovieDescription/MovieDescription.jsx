@@ -62,10 +62,14 @@ function MovieDescription() {
         <h3>Additional information</h3>
         <ul>
           <li>
-            <NavLink to={`/movies/${movieId}/cast`}>Cast</NavLink>
+            <NavLink state={location.state} to={`/movies/${movieId}/cast`}>
+              Cast
+            </NavLink>
           </li>
           <li>
-            <NavLink to={`/movies/${movieId}/reviews`}>Review</NavLink>
+            <NavLink state={location.state} to={`/movies/${movieId}/reviews`}>
+              Review
+            </NavLink>
           </li>
         </ul>
         <Outlet />

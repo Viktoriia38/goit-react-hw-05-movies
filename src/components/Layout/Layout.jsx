@@ -6,10 +6,20 @@ function Layout() {
     <>
       <header className={css.section}>
         <nav className={css.layout}>
-          <NavLink className={css.layoutLink} to="/">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.active : css.layoutLink
+            }
+            to="/"
+          >
             Home
           </NavLink>
-          <NavLink className={css.layoutLink} to="/movies">
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? css.active : css.layoutLink
+            }
+            to="/movies"
+          >
             Movies
           </NavLink>
         </nav>
